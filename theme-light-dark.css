@@ -1,0 +1,46 @@
+:root {
+  --color-scheme: light dark;
+}
+/* Quand le thème est light, inverser l'affichage des icônes */
+body.light-theme .tld-light-icon {
+  display: none;
+}
+
+body.light-theme .tld-dark-icon {
+  display: block;
+}
+
+body.dark-theme .tld-light-icon {
+  display: block;
+}
+
+body.dark-theme .tld-dark-icon {
+  display: none;
+}
+
+/* Styles pour les icônes de thème */
+.tld-theme-toggle-icon {
+  --icon-size: 24px;
+  fill: var(--accent-color);
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+header .tld-theme-toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  &:hover {
+    animation: turn-icon 1s ease-in-out;
+  }
+}
+
+@keyframes turn-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
